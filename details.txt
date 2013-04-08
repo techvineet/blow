@@ -1,0 +1,28 @@
+We are currently looking at developing a "trial run" website to be used as a sales tool for a fairly large online education program we are looking to develop.
+
+The idea is, that we would like to build 3-4 pages of semi-functional demos that can be used to sell and illustrate our concept to potential clients and investors. If this stage is successful, then we would go ahead with the full project.
+
+The following is a list of the pages we currently need developed, along with a brief overview of contents :
+
+1. "Test Creation Page"
+Page allowing users to interact with a website where they can "build tests". The layout/functionality would be similar to this: ( http://ui.jquery.com/repository/real-world/layout/
+ 
+) - allowing a user to drag and drop various types of questions (multiple choice, fill in the blank, matching) from a tool bar, then customize the text , and indicate the correct answer
+
+2. "Test Taking Page"
+This page would display the content selected/inputted on the "test creation page" for a user to read and select answers. After selecting the answers - the user will 'submit' their test, and receive their score/correct answers.
+
+3. "Report Card"
+This page will display a list of tests available to take, and the scores of those tests that have already been taken. It will also feature graphs on the right hand side of the page graphically displaying their test results.
+
+This is a brief outline of what we would like to include in our sample pages. Specific design considerations and functionality will be provided / discussed with you upon bid acceptance.
+
+If this "sample website" is successful, then we will move ahead with the "actual project", which will be much more in-depth.
+
+URL for making graphs
+http://www.globfx.com/support/swfchartgen/kb.php?id=9494b613-2d1f-4721-b900-2ae81a34d3dd
+
+Akash FTP Details
+codetester - username
+share*User1 - pwd
+host - daivim.com

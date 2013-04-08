@@ -1,0 +1,144 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jan 17, 2009 at 04:14 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `onlinetest`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE IF NOT EXISTS `admins` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(15) NOT NULL,
+  `password` varchar(35) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email_address` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL default '1',
+  `updated_at` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `username`, `password`, `first_name`, `last_name`, `email_address`, `status`, `updated_at`) VALUES
+(1, 'admin8', '25d55ad283aa400af464c76d713c07ad', 'Vineet ', 'Sethi', 'vineet@somwhere.com', 1, '2009-01-15 22:38:55'),
+(2, 'admin7', 'fcea920f7412b5da7be0cf42b8c93759', 'Akash', 'Sharma', 'akash@somewhere.com', 1, '0000-00-00 00:00:00'),
+(3, 'admin_vineet', '0e8455ddd2ed5957587564933458342c', 'Maria', 'Islamia', 'maria@somewhere.com', 1, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `questions`
+--
+
+CREATE TABLE IF NOT EXISTS `questions` (
+  `id` int(10) NOT NULL auto_increment,
+  `test_id` int(10) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `sub_title` varchar(100) default NULL,
+  `type` smallint(3) NOT NULL,
+  `options` text,
+  `answers` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `questions`
+--
+
+INSERT INTO `questions` (`id`, `test_id`, `title`, `sub_title`, `type`, `options`, `answers`) VALUES
+(15, 2, 'Who will be the super powers of this world till 2015?', '', 1, 'a:5:{i:0;s:5:"India";i:1;s:8:"Pakistan";i:2;s:5:"Japan";i:3;s:10:"Bangladesh";i:4;s:5:"China";}', 'a:2:{i:0;s:1:"1";i:1;s:1:"3";}'),
+(11, 1, 'Who invented transistor?', '', 1, 'a:5:{i:0;s:16:"William Shockley";i:1;s:15:"Walter Braitain";i:2;s:12:"John Bardien";i:3;s:12:"Akash Sharma";i:4;s:12:"Vineet Sethi";}', 'a:3:{i:0;s:1:"1";i:1;s:1:"3";i:2;s:1:"2";}'),
+(12, 1, 'What is the color of Letter Box?', '', 2, 'a:4:{i:0;s:3:"Red";i:1;s:5:"Green";i:2;s:4:"Pink";i:3;s:6:"Orange";}', '1'),
+(13, 1, 'What is the AR in AR Rehman?', '', 1, 'a:4:{i:0;s:8:"Are Ruko";i:1;s:9:"Ala Rakha";i:2;s:11:"Ananad Rekh";i:3;s:17:"None of the above";}', 'a:1:{i:0;s:1:"2";}'),
+(14, 1, '____ has spread terrorism all over India?', '', 3, NULL, 'Pakistan'),
+(16, 2, 'Sun ____ from the east', '', 3, NULL, 'rises'),
+(17, 2, 'What would you call a stupid?', '', 1, 'a:3:{i:0;s:5:"dazed";i:1;s:4:"dolt";i:2;s:7:"economy";}', 'a:2:{i:0;s:1:"1";i:1;s:1:"2";}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tests`
+--
+
+CREATE TABLE IF NOT EXISTS `tests` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `title` varchar(100) NOT NULL,
+  `sub_title` varchar(100) default NULL,
+  `questions_count` int(10) unsigned NOT NULL,
+  `updated_at` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tests`
+--
+
+INSERT INTO `tests` (`id`, `title`, `sub_title`, `questions_count`, `updated_at`) VALUES
+(1, 'Sample Test 00', '', 4, '2009-01-15 23:29:38'),
+(2, 'Sample Test 01', '', 3, '2009-01-15 23:35:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(15) NOT NULL,
+  `password` char(32) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email_address` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL default '1',
+  `updated_at` timestamp NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `email_address`, `status`, `updated_at`) VALUES
+(1, 'user1', '24c9e15e52afc47c225b757e7bee1f9d', 'Vineet', 'Sethi', 'vineet_sethi25@gmail.com', 1, '2009-01-15 23:10:17'),
+(2, 'user2', '7e58d63b60197ceb55a1c487989a3720', 'Akash', 'Sharma', 'akash@somehwer.com', 1, '2009-01-15 23:10:17'),
+(3, 'user3', '92877af70a45fd6a2ed7fe81e1236b78', 'Anurag', 'Pal Singh', 'anurag@somehere.xom', 1, '2009-01-15 23:11:13');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_tests`
+--
+
+CREATE TABLE IF NOT EXISTS `users_tests` (
+  `user_id` int(10) unsigned NOT NULL,
+  `test_id` int(10) unsigned NOT NULL,
+  `correct` int(11) default NULL,
+  `answers` longtext NOT NULL,
+  `is_complete` tinyint(1) unsigned NOT NULL default '0',
+  `updated_on` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  KEY `user_id` (`user_id`,`test_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_tests`
+--
+
+INSERT INTO `users_tests` (`user_id`, `test_id`, `correct`, `answers`, `is_complete`, `updated_on`) VALUES
+(1, 1, 3, 'a:4:{i:11;a:1:{i:0;s:1:"0";}i:12;s:1:"1";i:13;a:1:{i:0;s:1:"2";}i:14;s:8:"Pakistan";}', 1, '2009-01-17 14:32:28');
